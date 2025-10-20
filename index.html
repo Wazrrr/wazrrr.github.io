@@ -25,7 +25,9 @@
 <section id="about" class="hero" aria-label="About">
   <img src="/assets/images/profile.jpg" alt="Photo of Ziren Wang">
   <div>
-    <p>I am a fourth-year undergraduate in the Yao Class at Tsinghua University, majoring in Computer Science. My academic interests center around distributed systems and ML systems.</p>
+    <p>I am a fourth-year undergraduate in the Yao Class at Tsinghua University, majoring in Computer Science. My academic interests center around distributed systems and ML systems.
+    <br>
+    I am currently working on the development of a flexible, high-performance Python framework for LLM inference with fine-grained intra-GPU resource management.</p>
   </div>
 </section>
 
@@ -33,7 +35,7 @@
   <h2>Publications</h2>
   <ul>
     <li>
-      <em>NanoFlow: Towards Optimal Large Language Model Serving Throughput</em>.<br>
+      <em><strong>NanoFlow: Towards Optimal Large Language Model Serving Throughput</strong></em>.<br>
       Kan Zhu, Yufei Gao, Yilong Zhao, Liangyu Zhao, Gefei Zuo, Yile Gu, Dedong Xie, Tian Tang, Qinyu Xu, Zihao Ye, Keisuke Kamahori, Chien-Yu Lin, <strong>Ziren Wang</strong>, Stephanie Wang, Arvind Krishnamurthy, and Baris Kasikci<br>
       <em>19th USENIX Symposium on Operating Systems Design and Implementation (OSDI 25)</em>, Year 2025.
       <span class="small">[<a href="https://www.usenix.org/system/files/osdi25-zhu-kan.pdf" class="code-link">PDF</a>] [<a href="https://github.com/efeslab/Nanoflow" class="code-link">Code</a>]</span>
@@ -65,15 +67,50 @@
     </section>
 
 
-<section id="contact" aria-label="Contact">
-  <h2>Contact</h2>
-  <p>Email: <a href="mailto:wang-zr22@mails.tsinghua.edu.cn">wang-zr22@mails.tsinghua.edu.cn</a> · GitHub: <a href="https://github.com/Wazrrr">Wazrrr</a> · Google Scholar: <a href="https://scholar.google.com/citations?user=vMPVF7IAAAAJ&hl=en">Ziren Wang</a></p>
-</section>
+    <section id="contact" aria-label="Contact">
+      <h2>Contact</h2>
+      <div class="icons">
+        <!-- Email -->
+        <a class="icon-link" href="mailto:wang-zr22@mails.tsinghua.edu.cn" aria-label="Email" title="Email">
+          <!-- Heroicons envelope (outline) -->
+          <img class="icon" src="assets/icons/gmail.svg" alt="" />
+        </a>
+    
+        <!-- GitHub (Simple Icons) -->
+        <a class="icon-link" href="https://github.com/Wazrrr" aria-label="GitHub" title="GitHub">
+          <img class="icon" src="assets/icons/github.svg" alt="" />
+        </a>
+    
+        <!-- Google Scholar (Simple Icons) -->
+        <a class="icon-link" href="https://scholar.google.com/citations?user=vMPVF7IAAAAJ&hl=en" aria-label="Google Scholar" title="Google Scholar">
+          <img class="icon" src="assets/icons/googlescholar.svg" alt="" />
+        </a>
+      </div>
+    </section>
 
   </main>
+  
   <footer>
-    © <span id="year"></span> Ziren Wang
+    © <span id="year"></span> Ziren Wang ·
+    Updated <time id="lastmod" datetime=""></time>
   </footer>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  
+    // Last modified (per page)
+    (function () {
+      var el = document.getElementById('lastmod');
+      if (!el) return;
+      var last = new Date(document.lastModified);
+      if (isNaN(last.getTime())) return; // safety
+      // Format like "Oct 20, 2025" (change locale/options to taste)
+      var formatted = new Intl.DateTimeFormat('en-US', {
+        year: 'numeric', month: 'short', day: '2-digit'
+      }).format(last);
+      el.textContent = formatted;
+      el.setAttribute('datetime', last.toISOString());
+    })();
+  </script>
 </body>
 </html>

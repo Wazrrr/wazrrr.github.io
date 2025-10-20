@@ -15,30 +15,44 @@
       <a href="/index.html" >About</a>
       <a href="/index.html#publications">Publications</a>
       <a href="/index.html#projects">Projects</a>
-      <a href="/blog/index.html" style='text-decoration:underline; opacity:1'>Blog</a>
+      <a href="/blog/index.html" style='text-decoration:underline; opacity:1'>Blogs</a>
       <a href="/cv/index.html" >CV</a>
       <a href="/index.html#contact">Contact</a>
     </nav>
   </header>
   <main>
   
-<section aria-label="Blog">
-  <h2>Blog</h2>
-  <p class="small">Notes on distributed systems, ML systems, and more.</p>
-  <ul>
-    <li>
-      <a class="code-link" href="/blog/posts/example-post.html">Hello, world: building this website</a>
-      <div class="article-meta">Oct 20, 2025 · 3 min read</div>
-    </li>
-  </ul>
-  <hr>
-  <p class="small">To add posts, copy <code>example-post.html</code> and list it here (or generate this list automatically later).</p>
-</section>
+    <section aria-label="Blogs">
+      <h2>Blogs</h2>
+      <p class="small">Notes on MLsys, Life, and more.</p>
+      <ul id="post-list"></ul>
+      <hr>
+    </section>
+    
+    <script>
+    (async function () {
+      try {
+        const res = await fetch('/assets/posts/posts.json');
+        const posts = await res.json();
+    
+        // newest first
+        posts.sort((a,b) => new Date(b.date) - new Date(a.date));
+    
+        const ul = document.getElementById('post-list');
+        ul.innerHTML = posts.map(p => {
+          const date = new Date(p.date).toLocaleDateString(undefined, {year:'numeric', month:'short', day:'2-digit'});
+          return `
+            <li>
+              <a class="code-link" href="/blog/post.html?p=${encodeURIComponent(p.file)}">${p.title}</a>
+              <div class="article-meta">${date}</div>
+            </li>`;
+        }).join('');
+      } catch (e) {
+        document.getElementById('post-list').innerHTML = '<li>Could not load posts.</li>';
+      }
+    })();
+    </script>
 
   </main>
-  <footer>
-    © <span id="year"></span> Ziren Wang
-  </footer>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>

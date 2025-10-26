@@ -1,4 +1,4 @@
-# Manage Two GitHub repositories
+# Manage Two GitHub Repositories
 
 ## Add a remote
 ```
@@ -18,4 +18,10 @@ git remote -v
 ## Push to public repository
 ```
 git push public <private_branch>:<public_branch>
+```
+
+# Docker Relative Commands
+```
+docker ps -a # list all containers
+docker exec -it <container_id> bash
 ```

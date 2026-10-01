@@ -22,11 +22,10 @@
 <section id="about" class="hero" aria-label="About">
   <img src="/assets/images/profile.jpg" alt="Photo of Ziren Wang">
   <div>
-    <p>I am Ziren Wang, a senior undergraduate in the Yao Class at Tsinghua University, majoring in Computer Science. I am currently a research intern at the Systems Lab at the University of Washington, advised by Prof. Baris Kasikci, and also advised by Prof. Mingyu Gao at Tsinghua University.
-    <br>Currently, I am working on the development of a flexible and high-performance Python framework for LLM inference, featuring fine-grained intra-GPU resource management. My research interests center around distributed systems and machine learning systems, with a focus on building efficient and scalable infrastructures for modern AI workloads.
-
-    <br>In the future, I plan to pursue a Ph.D. in Computer Science, starting in Fall 2025.</p>
-    <p>If you are interested in my research, please feel free to email me at <a href="mailto:wang-zr22@mails.tsinghua.edu.cn">wang-zr22@mails.tsinghua.edu.cn</a>.</p>
+    <p>I am Ziren Wang, a first-year Ph.D. student in Computer Science and Engineering at the University of California, San Diego, working with Prof. Yiying Zhang.</p>
+    <p>Previously, I studied Computer Science in the Yao Class at Tsinghua University, where I was advised by Prof. Mingyu Gao. I was also a research intern at the SysLab at the University of Washington, advised by Prof. Baris Kasikci.</p>
+    <p>My research interests center around distributed systems and machine learning systems, with a focus on building efficient and scalable infrastructure for modern AI workloads. My work includes high-performance LLM inference and fine-grained GPU resource management.</p>
+    <p>If you are interested in my research, please feel free to email me at <a href="mailto:ziw205@ucsd.edu">ziw205@ucsd.edu</a>.</p>
 
   </div>
 </section>
@@ -43,25 +42,21 @@
   </ul>
 </section>
 
-    <section id="projects" aria-label="Project">
+    <section id="projects" aria-label="Projects">
       <h2>Projects</h2>
       <ul>
         <li>
-          <strong>LLM Inference</strong> [<a href="https://github.com/efeslab/Nanoflow" class="code-link">Code</a>]<br>
-          Leading development of a flexible, high-performance Python framework for LLM inference with fine-grained intra-GPU resource management.  <br>
+          <strong>Flexible LLM Infrastructure</strong> [<a href="https://github.com/efeslab/Nanoflow" class="code-link">Code</a>]<br>
+          I am leading the development of a flexible, high-performance Python framework for LLM inference with fine-grained GPU resource management.<br>
           We model SMs, memory bandwidth, and PCIe transfers as separable resources on independent streams, enabling kernel co-scheduling and overlap to maximize GPU utilization while minimizing cross-kernel interference.
         </li>
         <li>
-          <strong>Network on Chip</strong> [<a href="https://github.com/Wazrrr/NoC_Project/blob/working/report.pdf" class="code-link">PDF</a>] [<a href="https://github.com/Wazrrr/NoC_Project/tree/working" class="code-link">Code</a>]<br>
-          I reproduced the current SOTA algorithm for torus networks GOAL, implemented different VCs control policies and evaluated the experiment results, which shows global load balance by randomly choosing the direction to route in each dimension and therefore achieves local load balance by routing adaptively.
+          <strong>Reproducing GOAL</strong> [<a href="https://github.com/Wazrrr/NoC_Project/blob/working/report.pdf" class="code-link">PDF</a>] [<a href="https://github.com/Wazrrr/NoC_Project/tree/working" class="code-link">Code</a>]<br>
+          I reproduced GOAL, a routing algorithm for torus networks, implemented different virtual channel (VC) control policies, and evaluated their performance. GOAL combines randomized routing directions in each dimension for global load balancing with adaptive routing for local load balancing.
         </li>
         <li>
-          <strong>Backend Development</strong> [<a href="https://drive.google.com/drive/folders/1tBHeWL0guWRLK0QHdO2DIooTvYpLbVak?usp=sharing" class="code-link">Slides</a>] <br>
-          Our team developed an enrollment system, where we can publish announcements, and it also allows users to take exams. Additionally, there are some design tricks, such as masking, security design, and so on.
-        </li>
-        <li>
-          <strong>Numerical Analysis</strong> [<a href="https://drive.google.com/file/d/1PrtfxQmsK72oiWPQCZ8_EBRlxLKQLdEZ/view?usp=sharing" class="code-link">PDF</a>] <br>
-          We presented a new parallel decomposition algorithm that utilizes the sampling algorithm of RChol in conjunction with Multifrontal, dynamically managing the dependencies between threads and nodes. Experiments show that this algorithm can effectively improve the matrix decomposition rate when the matrix has high parallelism; however, it does not accelerate matrices that are inherently difficult to compute in parallel.
+          <strong>Parallel Decomposition with RChol</strong> [<a href="https://drive.google.com/file/d/1PrtfxQmsK72oiWPQCZ8_EBRlxLKQLdEZ/view?usp=sharing" class="code-link">PDF</a>] <br>
+          We developed a parallel decomposition algorithm that combines RChol sampling with a multifrontal method and dynamically manages dependencies between threads and nodes. Experiments show improved decomposition speed for matrices with substantial parallelism, but no speedup for matrices with limited parallelism.
         </li>
       </ul>
     </section>
